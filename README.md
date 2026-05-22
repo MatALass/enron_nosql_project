@@ -1,4 +1,4 @@
-# Projet NoSQL — Dataset Enron
+# Projet NoSQL : Dataset Enron
 
 Pipeline d'import du dataset **Enron** (corpus d'emails de Kenneth Lay, ~5900 mails) vers les **5 bases NoSQL** : MongoDB, Elasticsearch, Neo4j, Cassandra, Redis.
 
