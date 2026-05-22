@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+*.egg
+dist/
+build/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Donnees generees (volumineuses, regenerables via run_all_exports.py)
+# On garde data/raw/ versionne (dataset de depart) mais pas les exports.
+data/enriched/*.json
+data/mongo/*.json
+data/elasticsearch/*.ndjson
+data/elasticsearch/mapping.json
+data/neo4j/*.csv
+data/cassandra/*.csv
+
+# Logs
+*.log
+logs/
+
+# Tests / coverage
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,38 @@
+[project]
+name = "enron-nosql-project"
+version = "1.0.0"
+description = "Pipeline d'import du dataset Enron pour 5 bases NoSQL (MongoDB, Elasticsearch, Neo4j, Cassandra, Redis)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Mathieu" },
+]
+license = { text = "MIT" }
+
+# Dependances runtime
+dependencies = [
+    # Seul Redis necessite une lib Python pour l'import.
+    # Mongo, ES, Neo4j et Cassandra utilisent leurs outils natifs (mongoimport,
+    # curl bulk API, LOAD CSV, COPY FROM) sur les fichiers generes.
+    "redis>=5.0",
+]
+
+[project.optional-dependencies]
+# Dependances optionnelles pour explorer/requeter les bases depuis Python
+mongo  = ["pymongo>=4.6"]
+es     = ["elasticsearch>=8.0"]
+neo4j  = ["neo4j>=5.0"]
+cassandra = ["cassandra-driver>=3.28"]
+all = [
+    "pymongo>=4.6",
+    "elasticsearch>=8.0",
+    "neo4j>=5.0",
+    "cassandra-driver>=3.28",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
